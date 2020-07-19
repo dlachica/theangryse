@@ -80,7 +80,7 @@ public class FileRead {
                 }
         });
         stopWatch.stop();
-        System.out.println("Java 11 IO via Files: Strategy B: Running time of \"" + stopWatch.getTime(TimeUnit.MILLISECONDS) + "\" milliseconds");
+        System.out.println("Java 11 IO File Read via Files: Strategy B: Running time of \"" + stopWatch.getTime(TimeUnit.MILLISECONDS) + "\" milliseconds");
     }
 
     @Test
@@ -99,7 +99,7 @@ public class FileRead {
             }
         });
         stopWatch.stop();
-        System.out.println("Apache Commons File Util: Running time of \"" + stopWatch.getTime(TimeUnit.MILLISECONDS) + "\" milliseconds");
+        System.out.println("Apache Commons File Util File Read: Running time of \"" + stopWatch.getTime(TimeUnit.MILLISECONDS) + "\" milliseconds");
     }
 
     @After
