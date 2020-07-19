@@ -6,9 +6,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class RandomContentFileWriter {
+    private final RandomContentGenerator generator = new RandomContentGenerator();
     private final int numberOfFiles;
     private final File dir;
 
@@ -18,11 +18,7 @@ public class RandomContentFileWriter {
     }
 
     public List<File> write() throws IOException {
-        StringBuilder sb = new StringBuilder();
-        for (int j=0; j < 5000; j++){
-            sb.append(UUID.randomUUID().toString());
-        }
-        String contents = sb.toString();
+        String contents = generator.generateRandomString();
         List<File> toReturn = new ArrayList<>();
         for(int i=0; i < numberOfFiles; i++){
             File dummyFile = new File(dir, "dummyFile" + i + ".txt");
