@@ -26,9 +26,10 @@ public class FileWrite {
         StopWatch stopWatch = new StopWatch();
         File tempDir = temporaryFolder.newFolder();
         String contents = generator.generateRandomString();
+        byte[] bytes = contents.getBytes();
         stopWatch.start();
         for (int i = 0; i < NUMBER_OF_FILES; i ++){
-            Files.write(Paths.get(tempDir.getPath(), "dummy_" + i + ".txt"), contents.getBytes(), StandardOpenOption.CREATE_NEW);
+            Files.write(Paths.get(tempDir.getPath(), "dummy_" + i + ".txt"), bytes, StandardOpenOption.CREATE_NEW);
         }
         stopWatch.stop();
         System.out.println("Java IO Write Test: Running time of \"" + stopWatch.getTime(TimeUnit.MILLISECONDS) + "\" milliseconds");
